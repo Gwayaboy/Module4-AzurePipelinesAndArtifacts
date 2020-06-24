@@ -26,7 +26,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
 
   #### Building an Azure DevOps Pipeline for running Selenium Functional Tests
 
-  1. Set up your Azure DevOps Organisation
+  1. **Set up your Azure DevOps Organisation**
 
       -	Use or [create](https://signup.live.com) your personal Microsoft Account (MSA)      
       -	[Create a free Azure DevOps organization](https://dev.azure.com/)  associated with your MSA
@@ -38,7 +38,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
         - Set its visibility to public and name it AzurePipelineFunctionalTestsLab 
         - optionally provide with a description such as _"Build and run Web UI Functional Tests for Bing Web Search "_
 
-  2. Import and setup GitHub Repo to Azure DevOps Repository
+  **2. Import and setup GitHub Repo to Azure DevOps Repository**
       - Click on the Repos on the left side Pane
       - Click on Import repository button to bring up **Import a Git repository** panel
       ![](https://demosta.blob.core.windows.net/images/ImportGitRepo.PNG)
@@ -147,7 +147,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
               ArtifactName: 'drop'
               publishLocation: 'Container'
           ```
-  4. Click on the Save and run top right button to save our build definition and run it
+  4. **Click on the Save and run top right button to save our build definition and run it**
 
       ![](https://demosta.blob.core.windows.net/images/SaveAndRunBuild.PNG)
 
@@ -157,7 +157,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
         ![](https://demosta.blob.core.windows.net/images/SaveAndRunCOnfirmationDialog.PNG)
 
         
- 5. Watch the Job run streamed logs and if everything has worked correctly you should have a successful Build run
+  5. **Watch the Job run streamed logs and if everything has worked correctly you should have a successful Build run**
 
     Click on the Build number top path
 
