@@ -52,9 +52,98 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
           ![](https://demosta.blob.core.windows.net/images/SelectFinishedBranch.PNG)
 
 
-  3. Let's setup a new YAML by clicking on the top right ![](https://demosta.blob.core.windows.net/images/NewBuild.PNG)
+  3.  **Let's set up a new YAML Build by clicking on the top right button**
+      
+      ![](https://demosta.blob.core.windows.net/images/NewBuild.PNG)
+      
+      - This will bring us to the configure pipeline Wizzard
 
+        ![](https://demosta.blob.core.windows.net/images/ConfigurePipelineWizzard.PNG)
 
+        - Click  on show more and Select ASP.NET template
+        ![](https://demosta.blob.core.windows.net/images/ASPNETYAMLTemplate.PNG)
+
+        - You will be presented with a YAML build pipeline definition unsaved definition azure-pipeline.yaml file at the root of the repository
+          ```YAML
+          # ASP.NET
+          # Build and test ASP.NET projects.
+          # Add steps that publish symbols, save build artifacts, deploy, and more:
+          # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+          trigger:
+          - master
+
+          pool:
+            vmImage: 'windows-latest'
+
+          variables:
+            solution: '**/*.sln'
+            buildPlatform: 'Any CPU'
+            buildConfiguration: 'Release'
+
+          steps:
+          - task: NuGetToolInstaller@1
+
+          - task: NuGetCommand@2
+            inputs:
+              restoreSolution: '$(solution)'
+
+          - task: VSBuild@1
+            inputs:
+              solution: '$(solution)'
+              msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+              platform: '$(buildPlatform)'
+              configuration: '$(buildConfiguration)'
+
+          - task: VSTest@2
+            inputs:
+              platform: '$(buildPlatform)'
+              configuration: '$(buildConfiguration)'
+          ```
+
+        - Let's change the name and location of our YAML file to
+        ```Sources/Exercices/2-Selenium_Page_Objects/BingSearchPageObjects/build.yml```
+        - Next let's only target to our BingSearchPageObjects.sln by changing the variables section with
+          ```YAML
+          variables:
+              solution: '**/Sources/Exercices/2-Selenium_Page_Objects/*.sln'
+              buildPlatform: 'Any CPU'
+              buildConfiguration: 'Release'
+          ```
+
+        - Place the cussor to the end of the YAML file with no idendation
+        - Bring up the Assistance panel by clicking 
+        
+          ![](https://demosta.blob.core.windows.net/images/ShowAssistance.PNG)
+        - Then let's remove the second ```VSTest@2``` task since we don't have unit or shallow integration tests to run as part of our continuous integration build
+
+        - Let's add a copy files task to only copy the relevant DLLs so that we can run our Selenium tests later
+
+          ![](https://demosta.blob.core.windows.net/images/Tasks.PNG)
+
+          - Select Copy files task
+          
+          ![](https://demosta.blob.core.windows.net/images/CopyFilesTask.PNG)
+          - Then define Source Folder with ```Sources/Exercices/2-Selenium_Page_Objects/BingSearchPageObjects/bin``` and Target folder with ```$(build.artifactstagingdirectory)``` which refers to the release staging root folder. 
+          Once you click on the Add button on the panel an additional task will be generated as below 
+
+            ```YAML
+            - task: CopyFiles@2
+              inputs:
+              Contents: '**'
+              SourceFolder: 'Sources/Exercices/2-Selenium_Page_Objects/BingSearchPageObjects/bin'
+              TargetFolder: '$(build.artifactstagingdirectory)'
+            ```
+
+        - Then finally following same steps, bring up assistant panel search and select the _"```publish build artifacts```"_ task 
+        - Since the default parameters are good enough, just click on the Add button to generate an additional task as follow:
+          ```YAML
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+          ```
 
 
         
