@@ -9,7 +9,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
      - [Agents types](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser
 ) 
      - [UI Testing consideration](https://docs.microsoft.com/en-us/azure/devops/pipelines/test/ui-testing-considerations?view=azure-devops&tabs=mstest)
-     - Labs#1 : Create YAML Pipeline to build, release and run your functional UI Tests
+     - [Labs#1](https://github.com/Gwayaboy/Module4-AzurePipelinesAndArtifacts/blob/master/README.md#building-an-azure-devops-pipeline-for-running-selenium-functional-tests) : Create YAML Pipeline to build, release and run your functional UI Tests
   
  2. **Azure Artifacts**
     - [Overview](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/artifacts-overview?view=azure-devops) 
