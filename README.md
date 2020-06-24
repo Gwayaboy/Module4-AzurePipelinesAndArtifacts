@@ -1,6 +1,6 @@
 # Module 4: Running Functional Tests with Azure Pipeline & Artifacts
 
-Please [view and download]() Module 4's Slide deck
+Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAndArtifacts/blob/master/Content/RunningAutomationTestsWithAzurePipelines-Module%204.pdf) Module 4's Slide deck
 
 ## Agenda
 
