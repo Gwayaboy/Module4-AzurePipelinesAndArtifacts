@@ -161,16 +161,12 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
         
   4. **Watch the Job run streamed logs and if everything has worked correctly you should have a successful Build run**
 
-    Click on the Build number top path
+      - Click on the Build number top path           
+        ![](https://demosta.blob.core.windows.net/images/JobRun.PNG)
 
-    ![](https://demosta.blob.core.windows.net/images/JobRun.PNG)
+      - You should then see your build summary. Click on the 1 published pipeline artifact
+        ![](https://demosta.blob.core.windows.net/images/BuildSummary.PNG) 
 
-    You should then see your build summary.
-    Click on the 1 published pipeline artifact
+      - You should be redirected the artifacts page and if you expand the drop artifact you will have something as below:
 
-
-    ![](https://demosta.blob.core.windows.net/images/BuildSummary.PNG) 
-
-    You should get redirect the artifacts page and if you expand the drop artifact you will have something as below:
-
-    ![](https://demosta.blob.core.windows.net/images/PublishedPipelineArtifacts.PNG)
+        ![](https://demosta.blob.core.windows.net/images/PublishedPipelineArtifacts.PNG)
