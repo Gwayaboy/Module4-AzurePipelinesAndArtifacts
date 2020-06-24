@@ -61,7 +61,8 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
         ![](https://demosta.blob.core.windows.net/images/ConfigurePipelineWizzard.PNG)
 
         - Click  on show more and Select ASP.NET template
-        ![](https://demosta.blob.core.windows.net/images/ASPNETYAMLTemplate.PNG)
+
+          ![](https://demosta.blob.core.windows.net/images/ASPNETYAMLTemplate.PNG)
 
         - You will be presented with a YAML build pipeline definition unsaved definition azure-pipeline.yaml file at the root of the repository
           ```YAML
