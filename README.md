@@ -26,15 +26,16 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
 
    #### Set up your Azure DevOps Organisation
 
-  -	Use or [create](https://signup.live.com) your personal Microsoft Account (MSA)      
-  -	[Create a free Azure DevOps organization](https://dev.azure.com/)  associated with your MSA
+  1.	Use or [create](https://signup.live.com) your personal Microsoft Account (MSA)      
+  2.	[Create a free Azure DevOps organization](https://dev.azure.com/)  associated with your MSA
 
-  - Create a Project by clicking on the top right corning New Project button 
+  3. Create a Project by clicking on the top right corning New Project button 
 
-    ![](https://demosta.blob.core.windows.net/images/NewDevOpsProject.PNG)
+      ![](https://demosta.blob.core.windows.net/images/NewDevOpsProject.PNG)
 
-  - Set its visibility to public and name it AzurePipelineFunctionalTestsLab 
-  - optionally provide with a description such as _"Build and run Web UI Functional Tests for Bing Web Search "_
+  4. Set its visibility to public and name it AzurePipelineFunctionalTestsLab 
+
+  5. optionally provide with a description such as _```"Build and run Web UI Functional Tests for Bing Web Search"```_
 
   #### Building an Azure DevOps Pipeline for running Selenium Functional Tests
 
