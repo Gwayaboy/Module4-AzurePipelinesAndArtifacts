@@ -122,10 +122,13 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
           ![](https://demosta.blob.core.windows.net/images/Tasks.PNG)
 
           - Select Copy files task
-          
-          ![](https://demosta.blob.core.windows.net/images/CopyFilesTask.PNG)
+         
           - Then define Source Folder with ```Sources/Exercices/2-Selenium_Page_Objects/BingSearchPageObjects/bin``` and Target folder with ```$(build.artifactstagingdirectory)``` which refers to the release staging root folder. 
-          Once you click on the Add button on the panel an additional task will be generated as below 
+
+           
+            ![](https://demosta.blob.core.windows.net/images/CopyFilesTask.PNG)
+          
+            Once you click on the Add button on the panel an additional task will be generated as below 
 
             ```YAML
             - task: CopyFiles@2
@@ -144,7 +147,28 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
               ArtifactName: 'drop'
               publishLocation: 'Container'
           ```
+  4. Click on the Save and run top right button to save our build definition and run it
 
+      ![](https://demosta.blob.core.windows.net/images/SaveAndRunBuild.PNG)
+
+      - A dialog panel appears to confirm default options to commit directly tothe Finished branch.
+      - Just click again on the Save and run bottom right button of the panel
+
+        ![](https://demosta.blob.core.windows.net/images/SaveAndRunCOnfirmationDialog.PNG)
 
         
+ 5. Watch the Job run streamed logs and if everything has worked correctly you should have a successful Build run
 
+    Click on the Build number top path
+
+    ![](https://demosta.blob.core.windows.net/images/JobRun.PNG)
+
+    You should then see your build summary.
+    Click on the 1 published pipeline artifact
+
+
+    ![](https://demosta.blob.core.windows.net/images/BuildSummary.PNG) 
+
+    You should get redirect the artifacts page and if you expand the drop artifact you will have something as below:
+
+    ![](https://demosta.blob.core.windows.net/images/PublishedPipelineArtifacts.PNG)
