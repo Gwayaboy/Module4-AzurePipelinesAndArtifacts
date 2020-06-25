@@ -1,0 +1,44 @@
+trigger:
+  branches:
+    include:
+    - master
+variables:
+- name: solution
+  value: '**/Sources/Demo/BingSearchTestFramework/*.sln'
+- name: buildPlatform
+  value: Any CPU
+- name: buildConfiguration
+  value: Release
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: windows-latest
+    steps:
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: $(solution)
+    - task: VSBuild@1
+      inputs:
+        solution: $(solution)
+        msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"
+        platform: $(buildPlatform)
+        configuration: $(buildConfiguration)
+    - task: NuGetCommand@2
+      inputs:
+        command: pack
+        packagesToPack: '**/BingSearchTestFramework.csproj'
+        versioningScheme: byPrereleaseNumber
+        majorVersion: 1
+        minorVersion: 0
+        patchVersion: 0
+    - task: NuGetCommand@2
+      inputs:
+        command: push
+        packagesToPush: $(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg
+        nuGetFeedType: internal
+        publishVstsFeed: 8446e334-cc89-44ab-91d2-d0837d328a57/82fbfcc2-45a4-474a-ac93-04fa3962272d
+        allowPackageConflicts: true
+
