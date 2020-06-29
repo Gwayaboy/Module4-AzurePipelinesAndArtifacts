@@ -65,7 +65,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
 
           ![](https://demosta.blob.core.windows.net/images/ASPNETYAMLTemplate.PNG)
 
-        - You will be presented with a YAML build pipeline definition unsaved definition azure-pipeline.yaml file at the root of the repository
+        - You will be presented with a YAML build pipeline definition azure-pipeline.yaml file at the root of the repository
           ```YAML
           # ASP.NET
           # Build and test ASP.NET projects.
@@ -113,7 +113,7 @@ Please [view and download](https://github.com/Gwayaboy/Module4-AzurePipelinesAnd
               buildConfiguration: 'Release'
           ```
 
-        - Place the cussor to the end of the YAML file with no idendation
+        - Place the cursor to the end of the YAML file with no idendation
         - Bring up the Assistance panel by clicking 
         
           ![](https://demosta.blob.core.windows.net/images/ShowAssistance.PNG)
